@@ -1,12 +1,10 @@
 <% PASSWORD_FILE = File.join(RAILS_ROOT, '..', '..', 'shared', 'config', 'dbpassword') %>
 
 development:
-  adapter: mysql
-  database: CHANGEME_development
-  username: root
-  password: 
-  host: localhost
-  encoding: utf8
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
   
 test: &TEST
   adapter: mysql

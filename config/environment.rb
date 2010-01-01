@@ -31,6 +31,7 @@ Rails::Initializer.run do |config|
              :version => '>= 2.3.1.1'
   config.gem 'rack',
              :version => '>= 1.0.1'
+  config.gem 'geokit'
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -58,3 +59,4 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
 end
 
+DO_NOT_REPLY = "donotreply@thoraxe.gotdns.org"

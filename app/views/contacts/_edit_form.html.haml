@@ -1,0 +1,24 @@
+- form_for @contact do |f|
+  %p
+    =label(:contact, :name) 
+    =f.text_field :name
+  %p
+    =label(:contact, :address_1)
+    =f.text_field :address_1
+  %p
+    =label(:contact, :address_2)
+    =f.text_field :address_2
+  %p
+    =label(:contact, :city_town)
+    =f.text_field :city_town
+  %p
+    =label(:contact, :state_territory)
+    =f.text_field :state_territory
+  %p
+    =label(:contact, :postal_code)
+    =f.text_field :postal_code
+  %p
+    =label(:contact, :country)
+    =f.text_field :country
+  %p
+    =submit_tag

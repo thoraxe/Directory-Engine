@@ -1,0 +1,33 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en" :lang => "en"}
+  %head
+    %meta{"http-equiv" => "Content-type", "content" => "text/html; charset=UTF-8"}
+    %title Directory
+    =stylesheet_link_tag "http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css", "screen"
+  %body{:class => body_class}
+    %div{ yui_body_generator }
+      #hd
+        .content
+          #announce
+            %h1 Directory!
+          #loginbox
+            - if signed_in?
+              #loginbox-greeting
+                %p.welcome= "Welcome!"
+              #loginbox-actions
+                %p= link_to 'Logout', sign_out_path
+            - else
+              #loginbox-greeting
+                %p= link_to 'Login', sign_in_path
+                %p= link_to 'Sign Up', sign_up_path
+        .flashes
+          =display_standard_flashes
+      #bd
+        = yield 
+      #ft
+        %ul
+          %li= link_to 'Home', root_path
+          %li= link_to 'Contacts', contacts_path
+        #debugs
+          = debug params
+          = debug current_user
