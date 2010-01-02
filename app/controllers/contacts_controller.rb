@@ -9,6 +9,19 @@ class ContactsController < ApplicationController
                                  :conditions => ["name LIKE ? AND user_id = ?", "%#{name}%", current_user.id], :page => params[:page], :per_page => 20)
   end
 
+  def show
+    @contact = Contact.find(params[:id])
+    
+    # get out of here if the contact doesn't belong to us
+    if @contact.user_id != current_user.id
+      flash[:warning] = "That contact didn't belong to you, sorry!"
+      redirect_to root_path
+    else
+      @fields = current_user.contact_fields
+    end
+
+  end
+
   def new
     @contact = Contact.new
   end
