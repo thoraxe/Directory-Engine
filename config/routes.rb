@@ -26,6 +26,7 @@ ActionController::Routing::Routes.draw do |map|
   #   m.logout '/logout', :action => 'destroy'
   # end
 
+  map.resources :contact_fields
   map.resources :contacts
 
   map.root :controller => 'home'

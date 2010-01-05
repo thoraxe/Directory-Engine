@@ -1,0 +1,19 @@
+#yui-main
+  .yui-b
+    .header
+      .create_new
+        %p= link_to "Create Contact Field", new_contact_field_path
+      .total
+        %p== #{@contact_fields.total_entries} Fields
+    .list
+      = will_paginate @contact_fields, :params => {:search => params[:search]}
+      %table
+        %tr.titles
+          %th.name Field Name
+          %th.type Type
+          %th.delete 
+        - for contact_field in @contact_fields do
+          %tr{:class => cycle("even", "odd")}
+            %td.name= "#{contact_field.name}"
+            %td.type= "#{contact_field.field_type.classify}"
+            %td.link= link_to "Delete", contact_field, :method => :delete, :confirm => "Really delete?"

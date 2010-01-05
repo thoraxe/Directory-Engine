@@ -1,0 +1,10 @@
+- form_for @contact_field do |f|
+  %p
+    =label(:contact_field, :name) 
+    =f.text_field :name
+  %p
+    =label(:contact_field, :field_type)
+    =f.select(:field_type, options_for_select([["Integer", "integer"],["String","string"],["Decimal", "decimal"]]))
+  %p
+    =submit_tag
+

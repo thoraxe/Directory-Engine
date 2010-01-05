@@ -8,6 +8,7 @@ module ApplicationHelper
     # will return the symbol hash for the correct body div id and class
     return case controller.controller_name
       when "contacts" then {:id => "doc4", :class => ""}
+      when "contact_fields" then {:id => "doc4", :class => ""}
       else {:id => "doc4", :class => "yui-t2"}
     end
   end

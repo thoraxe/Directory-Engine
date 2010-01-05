@@ -8,5 +8,5 @@ class ContactField < ActiveRecord::Base
 
   # each contact field that a user creates will have lots of entries
   # for values, which correspond to contacts, too
-  has_many :contact_field_values
+  has_many :contact_field_values, :dependent => :destroy
 end
