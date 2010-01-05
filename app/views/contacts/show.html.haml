@@ -1,7 +1,7 @@
 #yui-main
   .yui-b
     .vcard
-      %span.fn.org=@contact.name
+      %span.fn.org== #{@contact.name} [ #{link_to 'Edit', edit_contact_path(@contact)} ]
       .adr
         .street-address=@contact.address_1
         .extended-address=@contact.address_2 unless @contact.address_2.blank?
@@ -9,3 +9,8 @@
         %span.region=@contact.state_territory
         %span.postal-code=@contact.postal_code
         .country-name=@contact.country
+      .field-values
+        - @contact.contact_field_values.each do |fv|
+          %dl
+            %dt== #{fv.contact_field.name}
+            %dd== #{fv.field_value}
