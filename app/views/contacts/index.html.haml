@@ -12,9 +12,9 @@
       = will_paginate @contacts, :params => {:search => params[:search]}
       %table
         %tr.titles
-          %th Name
-          %th Edit
-          %th Delete
+          %th.name Name
+          %th.edit 
+          %th.delete 
         - for contact in @contacts do
           %tr{:class => cycle("even", "odd")}
             %td.name= link_to "#{contact.name}", contact_path(contact)
