@@ -6,4 +6,7 @@ class ContactField < ActiveRecord::Base
   # presented to the user upon editing
   belongs_to :user
 
+  # each contact field that a user creates will have lots of entries
+  # for values, which correspond to contacts, too
+  has_many :contact_field_values
 end
