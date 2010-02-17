@@ -1,0 +1,20 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en" :lang => "en"}
+  %head
+    %meta{"http-equiv" => "Content-type", "content" => "text/html; charset=UTF-8"}
+    %title Directory
+    =stylesheet_link_tag "http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css", "screen"
+  %body{:class => body_class}
+    %div{ yui_body_generator }
+      #hd
+        .content
+          #announce
+            %h1 Directory!
+        .flashes
+          =display_standard_flashes
+      #bd
+        = yield 
+      #ft
+        #debugs
+          = debug params
+          = debug current_user

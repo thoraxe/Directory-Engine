@@ -1,0 +1,9 @@
+.yui-b
+  - semantic_form_for :contact, :url => "/directory/search" do |form|
+    .geo
+      %p geo
+      = form.input :postal_code, :input_html => {:size => 10}
+    .opts
+      %p opts
+    .buttons
+      = form.commit_button "Search"
