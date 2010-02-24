@@ -31,7 +31,8 @@ Rails::Initializer.run do |config|
              :version => '>= 2.3.1.1'
   config.gem 'rack',
              :version => '>= 1.0.1'
-  config.gem 'geokit'
+  config.gem 'geokit',
+             :version => '>= 1.5.0'
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.

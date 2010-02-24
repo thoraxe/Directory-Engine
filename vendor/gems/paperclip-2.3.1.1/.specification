@@ -130,8 +130,6 @@ files:
 - shoulda_macros/paperclip.rb
 has_rdoc: true
 homepage: http://www.thoughtbot.com/projects/paperclip
-licenses: []
-
 post_install_message: 
 rdoc_options: 
 - --line-numbers
@@ -153,7 +151,7 @@ required_rubygems_version: !ruby/object:Gem::Requirement
 requirements: 
 - ImageMagick
 rubyforge_project: paperclip
-rubygems_version: 1.3.5
+rubygems_version: 1.3.1
 signing_key: 
 specification_version: 3
 summary: File attachments as attributes for ActiveRecord

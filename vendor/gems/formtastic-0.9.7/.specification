@@ -110,8 +110,6 @@ files:
 - spec/spec_helper.rb
 has_rdoc: true
 homepage: http://github.com/justinfrench/formtastic/tree/master
-licenses: []
-
 post_install_message: "\n  ========================================================================\n  Thanks for installing Formtastic!\n  ------------------------------------------------------------------------\n  You can now (optionally) run the generator to copy some stylesheets and\n  a config initializer into your application:\n    ./script/generate formtastic\n\n  To generate some semantic form markup for your exisiting models, just run:\n    ./script/generate form MODEL_NAME\n\n  Find out more and get involved:\n    http://github.com/justinfrench/formtastic\n    http://groups.google.com.au/group/formtastic\n  ========================================================================\n  "
 rdoc_options: 
 - --charset=UTF-8
@@ -132,7 +130,7 @@ required_rubygems_version: !ruby/object:Gem::Requirement
 requirements: []
 
 rubyforge_project: 
-rubygems_version: 1.3.5
+rubygems_version: 1.3.1
 signing_key: 
 specification_version: 3
 summary: A Rails form builder plugin/gem with semantically rich and accessible markup
