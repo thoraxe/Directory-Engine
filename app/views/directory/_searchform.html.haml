@@ -1,8 +1,10 @@
 .yui-b
   - semantic_form_for :contact, :url => "/directory/search" do |form|
+    = params[:id].blank? ? hidden_field_tag(:owner_id, params[:owner_id]) : hidden_field_tag(:owner_id, params[:id])
     .geo
       %p geo
       = form.input :postal_code, :input_html => {:size => 10}
+      = select_tag('distance', options_for_select([["DISTANCE", 0], ["5 mi", 1], ["10 mi", 2], ["25 mi", 3], ["50 mi", 4], ["100 mi", 5], ["300 mi", 6]], params[:distance].to_i)) 
     .opts
       %p opts
     .buttons

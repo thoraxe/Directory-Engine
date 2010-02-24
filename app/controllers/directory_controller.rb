@@ -14,6 +14,8 @@ class DirectoryController < ApplicationController
   end
 
   def search
+    @user = User.find(params[:owner_id])
+    @contact = Contact.new(params[:contact])
   end
 
 end
