@@ -16,7 +16,22 @@ class DirectoryController < ApplicationController
   def search
     @user = User.find(params[:owner_id])
     @contact = Contact.new(params[:contact])
-    @contacts = Contact.find(:all, :origin => params[:contact][:postal_code])
+    case params[:distance]
+    when "0" || "6"
+      @contacts = Contact.find(:all, :origin => params[:contact][:postal_code])
+    when "1"
+      @contacts = Contact.find(:all, :origin => params[:contact][:postal_code], :within => 5)
+    when "2"
+      @contacts = Contact.find(:all, :origin => params[:contact][:postal_code], :within => 25)
+    when "3"
+      @contacts = Contact.find(:all, :origin => params[:contact][:postal_code], :within => 100)
+    when "4"
+      @contacts = Contact.find(:all, :origin => params[:contact][:postal_code], :within => 300)
+    when "5"
+      @contacts = Contact.find(:all, :origin => params[:contact][:postal_code], :within => 500)
+    end
+
+    @contacts = @contacts.paginate(:page => params[:page], :per_page => 4)
   end
 
 end

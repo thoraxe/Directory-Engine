@@ -1,3 +1,18 @@
 #yui-main
   .yui-b.results
+    .pagination=will_paginate @contacts
+    - @contacts.each do |contact|
+      .contact-info
+        .fn.org
+          %p.contact="#{contact.name} - #{sprintf("%.2f", contact.distance)} mi"
+        .adr
+          .streets
+            %span.street-address=contact.address_1
+            -if !contact.address_2.blank?
+              %span.extended-address=contact.address_2
+          %span.locality=contact.city_town
+          %abbr.region{:title => contact.state_territory}=contact.state_territory
+          %span.postal-code=contact.postal_code
+          .country-name=contact.country
+    .pagination=will_paginate @contacts
 =render :partial => 'searchform'
