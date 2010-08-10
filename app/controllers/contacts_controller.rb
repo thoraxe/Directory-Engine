@@ -4,7 +4,11 @@ class ContactsController < ApplicationController
   before_filter :authenticate
 
   def index
+    # if someone did a search, we want to pass in those values to the SQL
     params[:search].nil? ? name = "" : name = params[:search]
+
+    # grab all of the contact fields for this user
+    @contact_fields = current_user.contact_fields
     @contacts = Contact.paginate(:all, :order => "name ASC",
                                  :conditions => ["name LIKE ? AND user_id = ?", "%#{name}%", current_user.id], :page => params[:page], :per_page => 20)
   end

@@ -13,11 +13,15 @@
       %table
         %tr.titles
           %th.name Name
-          %th.edit 
-          %th.delete 
+          %th.edit Edit
+          - for field in @contact_fields do
+            %th{:class => [field.name, "contact-field"]} #{field.name.titleize}
+          %th.delete Delete
         - for contact in @contacts do
           %tr{:class => cycle("even", "odd")}
             %td.name= link_to "#{contact.name}", contact_path(contact)
             %td.link= link_to 'Edit', edit_contact_path(contact)
-            %td.link= link_to 'Delete', contact_path(contact), :method => 'delete', :confirm => "Really delete #{contact.name}?"
+            - for field in @contact_fields do
+              %td &nbsp;
+            %td.link= link_to '[ x ]', contact_path(contact), :method => 'delete', :confirm => "Really delete #{contact.name}?"
 

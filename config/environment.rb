@@ -17,6 +17,7 @@ Rails::Initializer.run do |config|
   # you must remove the Active Record framework.
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
 
+  # using thoughtbot framework
   # Specify gems that this application depends on.
   config.gem 'RedCloth',
              :lib => 'redcloth',
@@ -33,6 +34,8 @@ Rails::Initializer.run do |config|
              :version => '>= 1.0.1'
   config.gem 'geokit',
              :version => '>= 1.5.0'
+
+  config.gem 'haml'
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
