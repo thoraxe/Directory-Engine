@@ -20,5 +20,7 @@
   %p
     =label(:contact, :country)
     =f.text_field :country
-  %p
+  %p.submit
     =submit_tag
+  %p.cancel
+    =link_to 'Cancel', contacts_path
