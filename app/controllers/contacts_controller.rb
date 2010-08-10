@@ -60,4 +60,16 @@ class ContactsController < ApplicationController
     end
   end
 
+  def destroy
+    @contact = Contact.find(params[:id])
+    if current_user.id == @contact.user_id
+      @contact.destroy
+      flash[:success] = "Contact #{@contact.name} successfully deleted."
+      redirect_to contacts_path
+    else
+      flash[:error] = "You cannot delete that contact, you don't own it!"
+      redirect_to contacts_path
+    end
+  end
+
 end
