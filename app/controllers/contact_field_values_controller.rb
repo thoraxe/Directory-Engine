@@ -1,0 +1,2 @@
+class ContactFieldValuesController < ApplicationController
+end
