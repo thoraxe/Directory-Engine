@@ -1,0 +1,10 @@
+-form_for @contact_field_value do |f|
+  =hidden_field_tag "contact_id", params[:contact]
+  =hidden_field_tag "contact_field_id", params[:field]
+  %p
+    =label(:contact_field_value, :field_value, @contact_field.name )
+    =f.text_field :field_value
+  %p.submit
+    =submit_tag
+  %p.cancel
+    =link_to 'Cancel', contacts_path
